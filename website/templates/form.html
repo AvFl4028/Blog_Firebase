@@ -1,0 +1,15 @@
+{% extends 'index.html' %}
+
+{% load reactpy %}
+
+{% block content %}
+<form action="{% url 'index' %}" method="post">
+    {% csrf_token %}
+    {% component 'website.components.login_form'%}
+</form>
+{% comment %} <br />
+{% for i in users %}
+{% component 'website.components.cards' title=i.username data=i.password %}
+<br /> {% endcomment %}
+{% comment %} {% endfor %} {% endcomment %}
+{% endblock %}

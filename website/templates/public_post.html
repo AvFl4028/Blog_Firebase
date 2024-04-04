@@ -1,0 +1,12 @@
+{% extends 'index.html' %}
+
+{% load reactpy %}
+
+{% block content %}
+
+<form action="{% url 'public_post' %}" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {% component 'website.components.post_post'%}
+</form>
+
+{% endblock %}

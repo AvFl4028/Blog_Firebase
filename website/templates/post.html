@@ -1,0 +1,14 @@
+{% extends 'index.html' %}
+
+{% load reactpy %}
+
+{% block content %}
+    <div class="row row-cols-1 row-cols-md-2 g-4">
+        {% for i in posts %}
+            {% component 'website.components.cards' title=i.title data=i.description img=i.img%}
+        {% endfor %}
+    </div>
+    <br>
+    <a href="{% url 'public_post' %}" class="btn btn-primary">Crear Post</a>
+    <br>
+{% endblock %}
