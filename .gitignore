@@ -2,3 +2,4 @@
 /website/__pycache__
 /blog/__pycache__
 /website/firebase_config.py
+db.sqlite3
