@@ -25,7 +25,11 @@ SECRET_KEY = 'django-insecure-2yasy7ha$6i9f7b1*+7-@=1ci=6%^k#bxmhn^#@z5u7i()s(7!
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = [".vercel.app", "127.0.0.1"]
+ALLOWED_HOSTS = [
+    ".vercel.app",
+    "127.0.0.1",
+    "https://blogfirebase-production.up.railway.app/",
+]
 
 
 # Application definition

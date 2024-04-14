@@ -1,7 +1,29 @@
 import pyrebase
-from . import firebase_config
+import os
+from dotenv import load_dotenv
 
-firebase = pyrebase.initialize_app(firebase_config.config)
+load_dotenv()
+
+apikey = os.environ.get("APIKEY")
+authDomain = os.environ.get("AUTHDOMAIN")
+databaseURL = os.environ.get("DBURL")
+projectId = os.environ.get("PROJECTID")
+storageBucket = os.environ.get("STORAGEBUCKET")
+messagingSenderId = os.environ.get("MESSAGINGSENDERID")
+appId = os.environ.get("APPID")
+
+
+config = {
+    "apiKey": apikey,
+    "authDomain": authDomain,
+    "databaseURL": databaseURL,
+    "projectId": projectId,
+    "storageBucket": storageBucket,
+    "messagingSenderId": messagingSenderId,
+    "appId": appId,
+}
+
+firebase = pyrebase.initialize_app(config)
 db = firebase.database()
 storage = firebase.storage()
 auth = firebase.auth()
